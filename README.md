@@ -7,7 +7,7 @@
 
 ## How to contribute
 
-Either create a new issue and describe what you would like to see or just create what you would like to see and seek approval for it i.e.
+Either create a new [issue](https://github.com/owen-kellie-smith/avo-website/issues) and describe what you would like to see or just create what you would like to see and seek approval for it i.e.
 1. Fork the repository
 2. Make your changes
 3. Submit a pull request
