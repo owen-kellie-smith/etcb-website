@@ -5,12 +5,13 @@
 ---
 
 
-## Contributing
+## How to contribute
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+2. Make your changes
+3. Submit a pull request
+
+If you are proposing a new page then copy an existing page and add your new page to includes/menu.html.
 
 ---
 
