@@ -26,3 +26,6 @@ MIT
 
 See GitHub contributors for the list of contributors to this project.
 
+## Domain name management
+
+axe-vale-orchestra is registered (at fasthosts) as a demo, for a year until March 2027. Fasthosts DNS settings forward to Cloudflare. Cloudflare has a CNAME for www(.axe-vale-orchestra.co.uk) which is owen-kellie-smith.github.io.  Github fowards to avo-website/docs via this repo > Settings > Pages (Custom Domain).
