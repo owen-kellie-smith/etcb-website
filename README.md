@@ -4,7 +4,6 @@
 
 ---
 
-
 ## How to contribute
 
 Either create a new [issue](https://github.com/owen-kellie-smith/avo-website/issues) and describe what you would like to see or just create what you would like to see and seek approval for it i.e.
@@ -16,6 +15,33 @@ If you are proposing a new page then copy an existing page e.g. docs/index.html 
 
 ---
 
+## Getting started with this repo
+
+### Download the repo and run tests
+```
+git clone https://github.com/owen-kellie-smith/avo-website.git
+cd avo-website
+npm install
+npx playwright install
+npm run check
+```
+
+If everything works you will see something like
+```
+✓ homepage loads
+✓ pages load
+✓ internal links valid
+Lighthouse scores:
+Performance      90+
+Accessibility    100
+SEO              100
+```
+
+---
+## Domain name management (info)
+axe-vale-orchestra is registered (at fasthosts) as a demo, for a year until March 2027. Fasthosts DNS settings forward to Cloudflare. Cloudflare has a CNAME for www(.axe-vale-orchestra.co.uk) which is owen-kellie-smith.github.io.  Github fowards to avo-website/docs via this repo > Settings > Pages (Custom Domain).
+
+---
 ## License
 
 MIT
@@ -26,6 +52,3 @@ MIT
 
 See GitHub contributors for the list of contributors to this project.
 
-## Domain name management
-
-axe-vale-orchestra is registered (at fasthosts) as a demo, for a year until March 2027. Fasthosts DNS settings forward to Cloudflare. Cloudflare has a CNAME for www(.axe-vale-orchestra.co.uk) which is owen-kellie-smith.github.io.  Github fowards to avo-website/docs via this repo > Settings > Pages (Custom Domain).
