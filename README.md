@@ -44,7 +44,7 @@ then open `http://localhost:4173`
 
 ---
 ## Domain name management (info)
-axe-vale-orchestra is registered (at fasthosts) as a demo, for a year until March 2027. Fasthosts DNS settings forward to Cloudflare. Cloudflare has a CNAME for www(.axe-vale-orchestra.co.uk) which is owen-kellie-smith.github.io.  Github fowards to avo-website/docs via this repo > Settings > Pages (Custom Domain).
+axe-vale-orchestra.co.uk is [registered (at fasthosts) as a demo, for a year until March 2027](https://www.whois.com/whois/axe-vale-orchestra.co.uk). Fasthosts DNS settings forward to Cloudflare. Cloudflare has a CNAME for www(.axe-vale-orchestra.co.uk) which is owen-kellie-smith.github.io.  Github fowards to avo-website/docs via this repo > Settings > Pages (Custom Domain).
 
 ---
 ## License
