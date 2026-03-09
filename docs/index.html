@@ -29,41 +29,85 @@
     </a>
   </div>
 
-  <div id="fb-feed" hidden>
-    <div class="fb-page"
-         data-href="https://www.facebook.com/AxeValeOrchestra/"
-         data-tabs="timeline"
-         data-width="500"
-         data-height="900"
-         data-small-header="false"
-         data-adapt-container-width="true"
-         data-hide-cover="false"
-         data-show-facepile="true">
-      <blockquote cite="https://www.facebook.com/AxeValeOrchestra/" class="fb-xfbml-parse-ignore">
-        <a href="https://www.facebook.com/AxeValeOrchestra/">Axe Vale Orchestra</a>
-      </blockquote>
+  <div id="fb-wrapper" hidden aria-hidden="true">
+    <div id="fb-feed">
+      <div class="fb-page"
+           data-href="https://www.facebook.com/AxeValeOrchestra/"
+           data-tabs="timeline"
+           data-width="500"
+           data-height="900"
+           data-small-header="false"
+           data-adapt-container-width="true"
+           data-hide-cover="false"
+           data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/AxeValeOrchestra/" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/AxeValeOrchestra/">Axe Vale Orchestra</a>
+        </blockquote>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  window.fbAsyncInit = function () {
+  (function () {
     const fallback = document.getElementById('fb-fallback');
+    const wrapper = document.getElementById('fb-wrapper');
     const feed = document.getElementById('fb-feed');
 
-    if (fallback) fallback.hidden = true;
-    if (feed) feed.hidden = false;
-
-    if (window.FB && window.FB.XFBML) {
-      window.FB.XFBML.parse(feed);
+    function showFallback() {
+      wrapper.hidden = true;
+      wrapper.setAttribute('aria-hidden', 'true');
+      fallback.hidden = false;
     }
-  };
+
+    function showFeed() {
+      fallback.hidden = true;
+      wrapper.hidden = false;
+      wrapper.setAttribute('aria-hidden', 'false');
+    }
+
+    function hasRenderedFacebookWidget() {
+      return !!feed.querySelector('iframe');
+    }
+
+    function checkForRenderedWidget() {
+      if (hasRenderedFacebookWidget()) {
+        showFeed();
+        return true;
+      }
+      return false;
+    }
+
+    showFallback();
+
+    window.fbAsyncInit = function () {
+      if (!window.FB || !window.FB.XFBML) {
+        showFallback();
+        return;
+      }
+
+      window.FB.XFBML.parse(feed);
+
+      let tries = 0;
+      const maxTries = 20;
+      const interval = setInterval(() => {
+        tries += 1;
+
+        if (checkForRenderedWidget() || tries >= maxTries) {
+          clearInterval(interval);
+          if (!hasRenderedFacebookWidget()) {
+            showFallback();
+          }
+        }
+      }, 300);
+    };
+
+    setTimeout(showFallback, 7000);
+  })();
 </script>
 
 <script async defer crossorigin="anonymous"
-  src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v23.0">
-</script>
-
+  src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v23.0"></script>
 
 </main>
 <div data-import="includes/footer.html"></div>

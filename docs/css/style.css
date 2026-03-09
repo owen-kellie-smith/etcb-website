@@ -292,8 +292,23 @@ body{
   }
 
 }
+
+
+.social-fallback-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 0 0.75rem 0;
+}
+#fb-feed[hidden] {
+  display: none !important;
+}
 .feed-wrap {
   max-width: 500px;
+}
+
+#fb-wrapper[hidden] {
+  display: none !important;
 }
 
 .social-fallback {
@@ -316,13 +331,4 @@ body{
   background: #1877f2;
   color: #fff;
   font-weight: 600;
-}
-.social-fallback-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 0 0 0.75rem 0;
-}
-#fb-feed[hidden] {
-  display: none !important;
 }
