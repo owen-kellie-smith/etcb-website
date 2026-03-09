@@ -29,11 +29,11 @@ npx playwright install
 npm run check
 ```
 
-If everything works you will see something like
+If everything works you will see something like (for each of several browsers)
 ```
+✓ internal links are not broken
 ✓ homepage loads
 ✓ pages load
-✓ internal links are not broken
 ```
 
 To view the site locally:
