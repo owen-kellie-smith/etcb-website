@@ -16,10 +16,12 @@
 
 <section class="feed-wrap" aria-label="Facebook feed">
   <div id="fb-fallback" class="social-fallback">
+    <div class="social-fallback-hero" aria-hidden="true">
     <img
       class="social-fallback-image"
       alt="Axe Vale Orchestra updates are available on Facebook"
       src="img/teaser.jpg"/>
+    </div>
     <h2>Latest updates</h2>
     <p>
       Our latest news, rehearsal updates, and concert announcements are posted on Facebook.
@@ -36,6 +38,19 @@
     <h2>Recent posts</h2>
     <div id="fb-feed"></div>
   </div>
+
+  <noscript>
+    <div class="social-fallback social-fallback-noscript">
+      <h2>Latest updates</h2>
+      <p>JavaScript is turned off, so the Facebook feed cannot be shown here.</p>
+      <a class="social-button"
+         href="https://www.facebook.com/AxeValeOrchestra/"
+         target="_blank"
+         rel="noopener">
+        View updates on Facebook
+      </a>
+    </div>
+  </noscript>
 </section>
 
 <script>
@@ -45,11 +60,16 @@
     const wrapper = document.getElementById('fb-wrapper');
     const feed = document.getElementById('fb-feed');
 
-    let resolved = false;
+    if (!fallback || !wrapper || !feed) {
+      return;
+    }
+
+    let finished = false;
     let pollTimer = null;
     let fallbackTimer = null;
+    let observer = null;
 
-    function clearTimers() {
+    function cleanup() {
       if (pollTimer) {
         clearInterval(pollTimer);
         pollTimer = null;
@@ -58,14 +78,18 @@
         clearTimeout(fallbackTimer);
         fallbackTimer = null;
       }
+      if (observer) {
+        observer.disconnect();
+        observer = null;
+      }
     }
 
     function showFallback() {
-      if (resolved) {
+      if (finished) {
         return;
       }
-      resolved = true;
-      clearTimers();
+      finished = true;
+      cleanup();
       feed.innerHTML = '';
       wrapper.hidden = true;
       wrapper.setAttribute('aria-hidden', 'true');
@@ -73,43 +97,48 @@
     }
 
     function showFeed() {
-      if (resolved) {
+      if (finished) {
         return;
       }
-      resolved = true;
-      clearTimers();
+      finished = true;
+      cleanup();
       fallback.hidden = true;
       wrapper.hidden = false;
       wrapper.setAttribute('aria-hidden', 'false');
     }
 
     function hasRenderedWidget() {
-      return !!feed.querySelector('iframe');
+      return !!feed.querySelector('iframe, span iframe, .fb_iframe_widget iframe');
     }
 
     function injectFacebookMarkup() {
-      feed.innerHTML = `
-        <div class="fb-page"
-             data-href="${pageUrl}"
-             data-tabs="timeline"
-             data-width="500"
-             data-height="900"
-             data-small-header="false"
-             data-adapt-container-width="true"
-             data-hide-cover="false"
-             data-show-facepile="false">
-          <blockquote cite="${pageUrl}" class="fb-xfbml-parse-ignore">
-            <a href="${pageUrl}">Axe Vale Orchestra</a>
-          </blockquote>
-        </div>
-      `;
+      feed.innerHTML = '' +
+        '<div class="fb-page"' +
+        ' data-href="' + pageUrl + '"' +
+        ' data-tabs="timeline"' +
+        ' data-width="500"' +
+        ' data-height="900"' +
+        ' data-small-header="false"' +
+        ' data-adapt-container-width="true"' +
+        ' data-hide-cover="false"' +
+        ' data-show-facepile="false">' +
+          '<blockquote cite="' + pageUrl + '" class="fb-xfbml-parse-ignore">' +
+            '<a href="' + pageUrl + '">Axe Vale Orchestra</a>' +
+          '</blockquote>' +
+        '</div>';
     }
 
-    function startPollingForWidget() {
-      let tries = 0;
-      pollTimer = setInterval(() => {
-        tries += 1;
+    function watchForWidget() {
+      observer = new MutationObserver(function () {
+        if (hasRenderedWidget()) {
+          showFeed();
+        }
+      });
+      observer.observe(feed, { childList: true, subtree: true });
 
+      let tries = 0;
+      pollTimer = setInterval(function () {
+        tries += 1;
         if (hasRenderedWidget()) {
           showFeed();
         } else if (tries >= 20) {
@@ -119,18 +148,30 @@
     }
 
     function handleFacebookReady() {
-      if (!window.FB || !window.FB.XFBML) {
+      if (!window.FB || !window.FB.XFBML || typeof window.FB.XFBML.parse !== 'function') {
         showFallback();
         return;
       }
 
       injectFacebookMarkup();
-      window.FB.XFBML.parse(feed);
-      startPollingForWidget();
+
+      try {
+        window.FB.XFBML.parse(feed, function () {
+          if (hasRenderedWidget()) {
+            showFeed();
+          }
+        });
+      } catch (error) {
+        showFallback();
+        return;
+      }
+
+      watchForWidget();
     }
 
     function loadFacebookSDK() {
-      if (document.getElementById('facebook-jssdk')) {
+      const existing = document.getElementById('facebook-jssdk');
+      if (existing) {
         return;
       }
 
@@ -144,8 +185,9 @@
       document.body.appendChild(sdk);
     }
 
-    showFallback();
-    resolved = false;
+    fallback.hidden = false;
+    wrapper.hidden = true;
+    wrapper.setAttribute('aria-hidden', 'true');
 
     window.fbAsyncInit = handleFacebookReady;
     loadFacebookSDK();
