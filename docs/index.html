@@ -15,33 +15,59 @@
 <h1>Latest</h1>
 <hr/>
 
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v23.0">
-      </script>
+<section class="feed-wrap" aria-label="Facebook feed">
+  <div id="fb-fallback" class="social-fallback">
+    <h2>Latest updates</h2>
+    <p>
+      Our latest news, rehearsal updates, and concert announcements are posted on Facebook.
+    </p>
+    <img src="img/teaser.jpg" alt="Axe Vale Orchestra performing" class="social-fallback-image">
+    <a class="social-button"
+       href="https://www.facebook.com/AxeValeOrchestra/"
+       target="_blank"
+       rel="noopener">
+      View updates on Facebook
+    </a>
+  </div>
 
-      <section class="feed-wrap" aria-label="Facebook feed">
-        <div class="fb-page"
-             data-href="https://www.facebook.com/AxeValeOrchestra/"
-             data-tabs="timeline"
-             data-width="500"
-             data-height="900"
-             data-small-header="false"
-             data-adapt-container-width="true"
-             data-hide-cover="false"
-             data-show-facepile="true">
-          <blockquote cite="https://www.facebook.com/AxeValeOrchestra/" class="fb-xfbml-parse-ignore">
-            <a href="https://www.facebook.com/AxeValeOrchestra/">Axe Vale Orchestra</a>
-          </blockquote>
-        </div>
-      </section>
+  <div id="fb-feed" hidden>
+    <div class="fb-page"
+         data-href="https://www.facebook.com/AxeValeOrchestra/"
+         data-tabs="timeline"
+         data-width="500"
+         data-height="900"
+         data-small-header="false"
+         data-adapt-container-width="true"
+         data-hide-cover="false"
+         data-show-facepile="true">
+      <blockquote cite="https://www.facebook.com/AxeValeOrchestra/" class="fb-xfbml-parse-ignore">
+        <a href="https://www.facebook.com/AxeValeOrchestra/">Axe Vale Orchestra</a>
+      </blockquote>
+    </div>
+  </div>
+</section>
 
-      <br/>
-      <section class="intro">
-        <div class="actions">
-          <a class="button primary" href="https://www.facebook.com/AxeValeOrchestra/" target="_blank" rel="noopener">AVO Facebook page</a>
-        </div>
-      </section>
+<script>
+  let fbLoaded = false;
+
+  window.fbAsyncInit = function () {
+    fbLoaded = true;
+    document.getElementById('fb-fallback').hidden = true;
+    document.getElementById('fb-feed').hidden = false;
+  };
+
+  setTimeout(() => {
+    if (!fbLoaded) {
+      document.getElementById('fb-fallback').hidden = false;
+      document.getElementById('fb-feed').hidden = true;
+    }
+  }, 3000);
+</script>
+
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v23.0">
+</script>
+
 
 </main>
 <div data-import="includes/footer.html"></div>

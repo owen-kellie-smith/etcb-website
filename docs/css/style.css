@@ -292,3 +292,34 @@ body{
   }
 
 }
+.feed-wrap {
+  max-width: 500px;
+}
+
+.social-fallback {
+  padding: 1.25rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.social-fallback h2 {
+  margin-top: 0;
+}
+
+.social-button {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  background: #1877f2;
+  color: #fff;
+  font-weight: 600;
+}
+.social-fallback-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 0 0.75rem 0;
+}
