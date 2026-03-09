@@ -10,7 +10,7 @@
 The website is in the [docs](docs) folder.
 
 To change anything, either create a new [issue](https://github.com/owen-kellie-smith/avo-website/issues) and describe what you would like to see or create what you would like to see and seek approval for it i.e.
-1. Fork the repository
+1. [Fork the repository](#download-the-repo-and-run-tests)
 2. Make your changes
 3. Submit a pull request
 
@@ -22,7 +22,7 @@ If you are proposing a new page then copy an existing page e.g. docs/index.html 
 
 ### Download the repo and run tests
 ```
-git clone https://github.com/owen-kellie-smith/avo-website.git
+git clone https://github.com/<your-github-user-name>/avo-website.git
 cd avo-website
 npm install
 npx playwright install
