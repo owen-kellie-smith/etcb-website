@@ -30,8 +30,11 @@ const redirectPages = [
 for (const path of redirectPages) {
   test(`${path} redirects to index`, async ({ page }) => {
     const response = await page.goto(path);
-    expect(response).not.toBeNull();
-    expect(response!.status()).toBeLessThan(400);
+    // In Firefox, the JS redirect can fire before the initial response is committed,
+    // causing Playwright to return null. Only check the status when available.
+    if (response !== null) {
+      expect(response.status()).toBeLessThan(400);
+    }
     // JS redirect fires; final URL should be index.html with a hash
     await page.waitForFunction(() => location.pathname === '/' || location.pathname.endsWith('index.html'));
     await expect(page.locator('body')).toBeVisible();
