@@ -8,7 +8,7 @@
     var segment = location.pathname.split('/').filter(Boolean).pop() || '';
     segment = segment.replace(/\.html$/, '').toLowerCase();
     var hash = validPages.includes(segment) ? '#' + segment : '';
-    location.replace(location.origin + '/' + hash);
+    location.replace('/' + hash);
   }());
 </script>
 </head>

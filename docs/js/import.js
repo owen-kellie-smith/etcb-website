@@ -65,7 +65,7 @@ async function loadPage(page) {
     }
   } else {
     try {
-      const response = await fetch(page + '.html');
+      const response = await fetch(`${encodeURIComponent(page)}.html`);
       if (!response.ok) {
         return loadPage('latest');
       }
