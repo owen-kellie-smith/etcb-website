@@ -1,13 +1,13 @@
 # avo-website
-![site checks](https://github.com/owen-kellie-smith/avo-website/actions/workflows/site-checks.yml/badge.svg)
+![site checks](https://github.com/owen-kellie-smith/etcb-website/actions/workflows/site-checks.yml/badge.svg)
 
-**Live site:** https://www.axe-vale-orchestra.co.uk/   [How?](#domain-name-management-info)
+**Live site:** 
 
 ---
 
 ## How to contribute
 
-To change anything, either create a new [issue](https://github.com/owen-kellie-smith/avo-website/issues) and describe what you would like to see or create what you would like to see and seek approval for it i.e.
+To change anything, either create a new [issue](https://github.com/owen-kellie-smith/etcb-website/issues) and describe what you would like to see or create what you would like to see and seek approval for it i.e.
 1. [Fork the repository](#download-the-repo-and-run-tests)
 2. Make your changes
 3. Submit a pull request
@@ -18,7 +18,7 @@ If you are proposing an edit for an existing page then just go ahead and make th
 
 If you are proposing a new page (e.g. `events`), you need to make **three** changes:
 
-1. **Create the content fragment** e.g. copy `docs\contact.html` to `docs/events.html`  
+1. **Create the content fragment** e.g. copy `docs/contact.html` to `docs/events.html`  
    This file contains only the page content — no `<html>`, `<head>`, or `<body>` tags. Leave the redirect script at the very top so that visiting the file directly sends users to the correct page.  Your new page will look like (once you have finished):
    ```html
    <script data-redirect>location.replace('./index.html#events');</script>
@@ -74,9 +74,6 @@ To view the site locally:
 ```
 then open `http://localhost:4173`
 
----
-## Domain name management (info)
-As a demo, [axe-vale-orchestra.co.uk is registered (at fasthosts), for a year until March 2027. Fasthosts DNS settings forward to Cloudflare.](https://www.whois.com/whois/axe-vale-orchestra.co.uk) Cloudflare [has a CNAME for www(.axe-vale-orchestra.co.uk) which is owen-kellie-smith.github.io](https://mxtoolbox.com/SuperTool.aspx?action=mx%3awww.axe-vale-orchestra.co.uk&run=toolpage).  Github fowards to avo-website/docs via this repo > Settings > Pages (Custom Domain) which created [a CNAME in docs](docs/CNAME).
 
 ---
 ## License
