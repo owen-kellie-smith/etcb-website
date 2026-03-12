@@ -14,6 +14,8 @@ To change anything, either create a new [issue](https://github.com/owen-kellie-s
 
 The website is in the [docs](docs) folder.
 
+If you are proposing an edit for an existing page then just go ahead and make the edit, commit your change and submit a pull request. 
+
 If you are proposing a new page (e.g. `events`), you need to make **three** changes:
 
 1. **Create the content fragment** e.g. copy `docs\contact.html` to `docs/events.html`  
