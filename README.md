@@ -70,7 +70,7 @@ If everything works you will see something like (for each of several browsers)
 
 To view the site locally:
 ```
-    npm start
+python3 -m http.server 4173 
 ```
 then open `http://localhost:4173`
 
