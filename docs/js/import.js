@@ -1,12 +1,12 @@
-const VALID_PAGES = ['latest', 'about', 'conductor', 'leader', 'charter', 'contact'];
+const VALID_PAGES = ['latest', 'about', 'conductor', 'leader', 'membership', 'contact'];
 
 const PAGE_TITLES = {
-  latest:    'Axe Vale Orchestra | Latest',
-  about:     'Axe Vale Orchestra',
-  conductor: 'Axe Vale Orchestra - Conductor',
-  leader:    'Axe Vale Orchestra - Leader',
-  charter:   'Axe Vale Orchestra - Charter',
-  contact:   'Axe Vale Orchestra - Contact',
+  latest:    'ETCB | Latest',
+  about:     'ETCB',
+  conductor: 'ETCB - Conductor',
+  leader:    'ETCB - Leader',
+  membership:   'ETCB - Membership',
+  contact:   'ETCB - Contact',
 };
 
 async function loadImports(root = document) {
@@ -76,7 +76,7 @@ async function loadPage(page) {
     }
   }
 
-  document.title = PAGE_TITLES[page] || 'Axe Vale Orchestra';
+  document.title = PAGE_TITLES[page] || 'ETCB';
   markActiveMenu(page);
 }
 
