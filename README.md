@@ -23,28 +23,28 @@ If you are proposing a new page (e.g. `events`), you need to make **three** chan
    ```html
    <script data-redirect>location.replace('./index.html#events');</script>
 
-   <h1>Events</h1>
-   <p>New content that describes some events ...</p>
+   <h1>Rehearsals</h1>
+   <p>New content that describes some rehearsals ...</p>
    ```
 
 2. **Register the page** in `docs/js/import.js`  
    Add the new page key to both arrays near the top of the file:
    ```js
-   const VALID_PAGES = ['latest', 'about', ..., 'events'];
+   const VALID_PAGES = ['latest', 'about', ..., 'rehearsals'];
 
    const PAGE_TITLES = {
      ...
-     events: 'Axe Vale Orchestra - Events',
+     events: 'Exmouth Town Concert Band - Rehearsals',
    };
    ```
 
 3. **Add a menu link** in `docs/includes/menu.html`  
    Use a `href="#events"` hash link (not a `.html` file link):
    ```html
-   <li><a href="#events">Events</a></li>
+   <li><a href="#rehearsals">Rehearsals</a></li>
    ```
 
-> **How it works:** The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#events`), and the router in `docs/js/import.js` fetches the matching fragment file (`events.html`) and inserts its content into the page — no full page reload.
+> **How it works:** The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#rehearsals`), and the router in `docs/js/import.js` fetches the matching fragment file (`rehearsals.html`) and inserts its content into the page — no full page reload.
 
 ---
 
@@ -52,7 +52,7 @@ If you are proposing a new page (e.g. `events`), you need to make **three** chan
 
 ### Download the repo and run tests
 ```
-git clone https://github.com/<your-github-user-name>/avo-website.git
+git clone https://github.com/<your-github-user-name>/etcb-website.git
 cd avo-website
 npm install
 npx playwright install
