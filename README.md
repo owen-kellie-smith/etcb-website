@@ -55,7 +55,7 @@ If you are proposing a new page (e.g. `#practices`) in the [current format](#cur
    
 ### Current format
 
-The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#contact`), and the router in `docs/js/import.js` fetches the matching fragment file (`contact.html`) and inserts its content into the page (which may appear less flickery than a full page reload).
+The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#contact`), and the router in `docs/js/import.js` fetches the matching fragment file (`contact.html`) and inserts its content into the page. Inserting the fragment may appear less flickery than a full page reload, but sometimes makes it look like the menu hasn't worked.
 
 ---
 
