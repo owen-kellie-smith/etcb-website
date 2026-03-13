@@ -324,6 +324,7 @@ a{
 }
 .feed-wrap {
   max-width: 500px;
+  width: 100%;
 }
 
 #fb-wrapper[hidden] {
@@ -350,4 +351,11 @@ a{
   background: #1877f2;
   color: #fff;
   font-weight: 600;
+}
+#fb-feed,
+#fb-feed iframe,
+.fb-page,
+.fb-page span {
+  max-width: 100% !important;
+  width: 100% !important;
 }
