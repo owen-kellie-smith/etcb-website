@@ -101,6 +101,13 @@ function initMenu() {
   toggle.addEventListener('click', function () {
     menu.classList.toggle('open');
   });
+
+  // Close menu when any menu link is clicked
+  menu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function () {
+      menu.classList.remove('open');
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
