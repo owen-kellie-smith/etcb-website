@@ -4,5 +4,44 @@
 <hr/>
 <h2>Contact us directly:</h2>
 <p>Please do get in touch with us!</p>
-<p><strong>Membership/Orchestra Secretary at:</strong></p>
-<p><a href="mailto:axevaleorchestra@gmail.com">axevaleorchestra@gmail.com</a></p>
+<p><strong>Secretary at:</strong>
+<a href="mailto:exmouthtownconcertband@gmail.com">exmouthtownconcertband@gmail.com</a></p>
+ 
+
+<div class="content-figure slideshow">
+  <img src="img/hires_clarinet.jpg.webp" class="slide active">
+  <img src="img/hires_bassoon.jpg.webp" class="slide">
+  <img src="img/hires_bassclarinet.jpg.webp" class="slide">
+  <img src="img/hires_horns.jpg.webp" class="slide">
+</div>
+
+
+
+<script>
+(function () {
+  document.querySelectorAll('.slideshow').forEach((slideshow) => {
+    const slides = slideshow.querySelectorAll('.slide');
+    if (slides.length <= 1) return;
+
+    let index = 0;
+    let timer;
+
+    function start() {
+      timer = setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, 4000);
+    }
+
+    function stop() {
+      clearInterval(timer);
+    }
+
+    slideshow.addEventListener('mouseenter', stop);
+    slideshow.addEventListener('mouseleave', start);
+
+    start();
+  });
+})();
+</script>

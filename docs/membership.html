@@ -2,6 +2,19 @@
 
 <section>
 
+<p>We practice on Monday evenings 7.00pm - 9.30pm</p>
+
+
+ 
+<div class="content-figure slideshow">
+  <img src="img/hires_choir.jpg.webp" class="slide active">
+  <img src="img/hires_steve.jpg.webp" class="slide">
+  <img src="img/hires_carols.jpg.webp" class="slide">
+  <img src="img/hires_trumpets.jpg.webp" class="slide">
+  <img src="img/hires_trombone.jpg.webp" class="slide">
+</div>
+
+
 <h1>Policies</h1>
 <p>The Privacy Policy (how we use member's data) was last updated on 22-Oct-2025.</p>
 <p><a href="assets/privacy.pdf" rel="noopener" target="_blank">Open the Privacy Policy (PDF)</a></p>
@@ -9,3 +22,32 @@
 <p>The Safeguarding Policy was implemented on 21-Oct-2025.</p>
 <p><a href="assets/safeguarding.pdf" rel="noopener" target="_blank">Open the Safeguarding Policy (PDF)</a></p>
 </section>
+
+<script>
+(function () {
+  document.querySelectorAll('.slideshow').forEach((slideshow) => {
+    const slides = slideshow.querySelectorAll('.slide');
+    if (slides.length <= 1) return;
+
+    let index = 0;
+    let timer;
+
+    function start() {
+      timer = setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, 4000);
+    }
+
+    function stop() {
+      clearInterval(timer);
+    }
+
+    slideshow.addEventListener('mouseenter', stop);
+    slideshow.addEventListener('mouseleave', start);
+
+    start();
+  });
+})();
+</script>
