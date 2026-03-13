@@ -8,9 +8,11 @@
 ## How to contribute
 
 To propose any change, either create a new [issue](https://github.com/owen-kellie-smith/etcb-website/issues) and describe what you would like to see or create what you would like to see and seek approval for it i.e.
-1. [Fork the repository](https://github.com/owen-kellie-smith/etcb-website/fork)
-2. Make your changes
-3. Submit a pull request
+1. [Fork](https://github.com/owen-kellie-smith/etcb-website/fork) the repository.
+2. [Check](#getting-started-with-this-repo) the repo passes all the current tests.
+3. Make your changes.
+4. [Check](#getting-started-with-this-repo) the changed repo still passes all the tests.
+5. Submit a pull request.
 
 The website is in the [docs](docs) folder.
 
