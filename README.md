@@ -7,34 +7,35 @@
 
 ## How to contribute
 
-To change anything, either create a new [issue](https://github.com/owen-kellie-smith/etcb-website/issues) and describe what you would like to see or create what you would like to see and seek approval for it i.e.
+To propose any change, either create a new [issue](https://github.com/owen-kellie-smith/etcb-website/issues) and describe what you would like to see or create what you would like to see and seek approval for it i.e.
 1. [Fork the repository](#download-the-repo-and-run-tests)
 2. Make your changes
 3. Submit a pull request
 
 The website is in the [docs](docs) folder.
 
-If you are proposing an edit for an existing page then just go ahead and make the edit, commit your change and submit a pull request. 
+If you are proposing an edit for an existing menu item (e.g. to #contact) then make the edit to the relevant fragment e.g. in `docs/contact.html`, commit your change and submit a pull request. 
 
-If you are proposing a new page (e.g. `events`) for the current format, you need to make **three** changes:
+If you are proposing a new menu item (e.g. `#practices`) for the [current format](#current-format), then you need **three** changes:
 
-1. **Create the content fragment** e.g. copy `docs/contact.html` to `docs/events.html`  
-   This file contains only the page content — no `<html>`, `<head>`, or `<body>` tags. Leave the redirect script at the very top so that visiting the file directly sends users to the correct page.  Your new page will look like (once you have finished):
+1. **Create the content fragment** e.g. copy `docs/contact.html` to `docs/practices.html`  
+   Edit the redirect script at the very top so that visiting the file directly sends users to the correct page.  Your new page will look like (once you have finished):
    ```html
-   <script data-redirect>location.replace('./index.html#events');</script>
+   <script data-redirect>location.replace('./index.html#practices');</script>
 
-   <h1>Rehearsals</h1>
-   <p>New content that describes some rehearsals ...</p>
+   <h1>Practices</h1>
+   <p>New content that describes practices ...</p>
+   <p>Practice venues sometimes change so check ... etc ...</p>
    ```
 
 2. **Register the page** in `docs/js/import.js`  
    Add the new page key to both arrays near the top of `docs/js/import.js`:
    ```js
-   const VALID_PAGES = ['latest', 'about', ..., 'rehearsals'];
+   const VALID_PAGES = ['latest', 'about', ..., 'practices'];
 
    const PAGE_TITLES = {
      ...
-     events: 'Exmouth Town Concert Band - Rehearsals',
+     practices: 'ETCB - Practices',
    };
    ```
 
@@ -43,8 +44,13 @@ If you are proposing a new page (e.g. `events`) for the current format, you need
    ```html
    <li><a href="#rehearsals">Rehearsals</a></li>
    ```
+   
+4. (Optional) Add your menu item to the list of hashPages tested in `tests/pages.spec.ts`.
 
-> **How it works:** The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#rehearsals`), and the router in `docs/js/import.js` fetches the matching fragment file (`rehearsals.html`) and inserts its content into the page (which hopefully is less flickery than a full page reload).
+   
+### Current format
+
+The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#rehearsals`), and the router in `docs/js/import.js` fetches the matching fragment file (`rehearsals.html`) and inserts its content into the page (which hopefully is less flickery than a full page reload).
 
 ---
 
