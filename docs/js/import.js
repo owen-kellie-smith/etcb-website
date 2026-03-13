@@ -106,11 +106,14 @@ function initMenu() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-  await loadImports();
-  initMenu();
-
   const initialPage = getPageFromHash();
-  await loadPage(initialPage);
+
+  await Promise.all([
+    loadPage(initialPage),
+    loadImports()
+  ]);
+
+  initMenu();
 
   window.addEventListener('hashchange', function () {
     const page = getPageFromHash();
