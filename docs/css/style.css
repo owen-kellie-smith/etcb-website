@@ -38,8 +38,8 @@ body{
 
 
 .menu-wrapper{
-  flex: 0 0 100%;           /* full width = new line */
-  display: block;
+  flex: 0 0 100%;                  /* menu row below header bar */
+  width: 100%;
   background: linear-gradient(#f9f9f9,#ececec);
   border-bottom: 1px solid var(--menu-border);
   position: relative;
@@ -48,21 +48,17 @@ body{
 
 .site-menu{
   position: static;
-  background:transparent;
-  border-bottom:0;
-  z-index:1000;
+  background: transparent;
+  border-bottom: 0;
 }
 
 .site-menu ul{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:flex-start;
-  max-height:none;
-  overflow:visible;
-  gap:0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .site-menu li{
@@ -86,8 +82,8 @@ body{
 
 /* MOBILE MENU BUTTON */
 
-.menu-toggle {
-  display:none;
+.menu-toggle{
+  display: none;                   /* hidden except mobile */
   width: 30px;
   height: 24px;
   flex-direction: column;
@@ -98,9 +94,9 @@ body{
   cursor: pointer;
 }
 
-.menu-toggle span {
+.menu-toggle span{
   display: block;
-  height: 3px;          /* thin line */
+  height: 3px;
   width: 100%;
   background-color: #fff;
   border-radius: 2px;
@@ -123,6 +119,7 @@ body{
 /* HEADER */
 
 .header-shell{
+  position: relative;              /* anchor for absolute hamburger on mobile */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -130,11 +127,11 @@ body{
 }
 
 .emotion-header{
-  width:100%;
-  padding:.08em .05em;
-  font-size:48px;
-  background:#264a68;
-  flex: 1 1 auto;
+  flex: 0 0 100%;                  /* title always full width */
+  width: 100%;
+  padding: 0 0.2em;
+  font-size: 48px;
+  background: #264a68;
 }
 
 .emotion-image{
@@ -149,14 +146,12 @@ body{
 }
 
 .site-title{
-  left:12%;
-  top:22%;
-  padding:.08em .05em;
+  position: static;   /* cancels absolute/relative positioning */
+  display: block;
+  margin: 0;
+  padding: .4em .1em;
   background:#264a68;
   color:#fff;
-  font-size:48px;
-  font-weight:700;
-  line-height:1.15;
 }
 
 .site-logo{
@@ -309,61 +304,57 @@ a{
 @media (max-width:560px){
 
   .site-title{
-    left:3%;
-    top:5%;
     font-size:24px;
   }
 
+  /* hamburger button pinned to top-right of the header-shell */
   .menu-toggle{
-    display:flex; /* keep your flex hamburger */
+    display: flex;
+    position: absolute;
+    top: -12px;
+    right: 8px;
+    z-index: 3000;
   }
 
+  /* menu wrapper no longer creates a visible "menu bar" row */
   .menu-wrapper{
     background: transparent;
     border-bottom: 0;
-    display: flex;
-    justify-content: flex-end; /* hamburger on the right; use flex-start for left */
+    flex: 0 0 auto;
+    width: auto;
   }
 
 
-  /* put the nav as a dropdown under the button */
+  /* dropdown container anchored to the button */
   .site-menu{
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 44px;        /* just below the hamburger */
+    right: 8px;
     left: auto;
-    width: 220px;          /* or 100% if you want full-width */
-    z-index: 1000;
-    border: none;
-    border-top: none;
+    width: 220px;
+    z-index: 2500;
   }
-
-  .site-menu a:hover,
-  .site-menu a.active{
-    color:#fff;
-  }
-
 
   /* collapsed by default */
   .site-menu ul{
-    display:flex;               /* keep flex so animation works */
-    flex-direction:column;
+    flex-direction: column;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
     background: linear-gradient(#f9f9f9,#ececec);
-/*
-    border: 1px solid var(--menu-border);
-*/
   }
-
 
   .site-menu.open ul{
     max-height: 500px;
   }
 
   .site-menu a{
-    border-top:1px solid #ddd;
+    border-top: 1px solid #ddd;
+  }
+  
+  .site-menu a:hover,
+  .site-menu a.active{
+    color:#fff;
   }
 
 }
