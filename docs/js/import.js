@@ -99,13 +99,16 @@ function initMenu() {
   if (!toggle || !menu) return;
 
   toggle.addEventListener('click', function () {
-    menu.classList.toggle('open');
+    toggle.classList.toggle('active');   // animate hamburger
+    menu.classList.toggle('open');       // show menu
+
   });
 
   // Close menu when any menu link is clicked
   menu.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function () {
       menu.classList.remove('open');
+      toggle.classList.remove('active');
     });
   });
 }
@@ -123,7 +126,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   window.addEventListener('hashchange', function () {
     const page = getPageFromHash();
     loadPage(page);
+
     const menu = document.querySelector('.site-menu');
+    const toggle = document.querySelector('.menu-toggle');
     if (menu) menu.classList.remove('open');
+    if (toggle) toggle.classList.remove('active');
   });
 });
