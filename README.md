@@ -19,12 +19,12 @@ To propose any change, either create a new [issue](https://github.com/owen-kelli
 
 The website is in the [docs](docs) folder.
 
-If you are proposing an edit for an existing menu item (e.g. to #contact) then make the edit to the relevant fragment e.g. in `docs/contact.html`, commit your change and submit a pull request. 
+If you are proposing an edit for an existing page (e.g. to #contact) then make the edit to the relevant fragment e.g. in `docs/contact.html`, commit your change and submit a pull request. 
 
-If you are proposing a new menu item (e.g. `#practices`) for the [current format](#current-format), then you need **three** changes:
+If you are proposing a new page (e.g. `#practices`) in the [current format](#current-format), then you need **three** changes:
 
 1. **Create the content fragment** e.g. copy `docs/contact.html` to `docs/practices.html`  
-   Edit the redirect script at the very top so that visiting the file directly sends users to the correct page.  Your new page will look like (once you have finished):
+   Edit the redirect script at the very top so that visiting the file directly sends users to the correct page.  Your new fragment will look like (once you have finished):
    ```html
    <script data-redirect>location.replace('./index.html#practices');</script>
 
@@ -45,17 +45,17 @@ If you are proposing a new menu item (e.g. `#practices`) for the [current format
    ```
 
 3. **Add a menu link** in `docs/includes/menu.html`  
-   Use a `href="#events"` hash link (not a `.html` file link):
+   Copy one of he existing links to add e.g.:
    ```html
-   <li><a href="#rehearsals">Rehearsals</a></li>
+   <li><a href="#practices">Practices</a></li>
    ```
    
-4. (Optional) Add your menu item to the list of hashPages tested in `tests/pages.spec.ts`.
+4. (Optional) Add your new page key to the list of hashPages tested in `tests/pages.spec.ts`.
 
    
 ### Current format
 
-The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#contact`), and the router in `docs/js/import.js` fetches the matching fragment file (`contact.html`) and inserts its content into the page (which hopefully is less flickery than a full page reload).
+The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#contact`), and the router in `docs/js/import.js` fetches the matching fragment file (`contact.html`) and inserts its content into the page (which may appear less flickery than a full page reload).
 
 ---
 
