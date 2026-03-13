@@ -1,7 +1,7 @@
 # etcb-website
 ![site checks](https://github.com/owen-kellie-smith/etcb-website/actions/workflows/site-checks.yml/badge.svg)
 
-**Live site:** https://owen-kellie-smith.github.io/etcb-website/
+**Live site:**  https://www.exmouthtownband.co.uk/     [How?](#domain-name-management-info)
 
 ---
 
@@ -74,6 +74,11 @@ python3 -m http.server 4173
 ```
 then open `http://localhost:4173`
 
+
+
+---
+## Domain name management (info)
+As a demo, [exmouthtownband.co.uk is registered (at fasthosts), for a year until March 2027. Fasthosts DNS settings forward to Cloudflare.](https://www.whois.com/whois/exmouthtownband.co.uk) Cloudflare [has a CNAME for www(.exmouthtownband.co.uk) which is owen-kellie-smith.github.io](https://mxtoolbox.com/SuperTool.aspx?action=mx%3awww.exmouthtownband.co.uk&run=toolpage).  Github fowards to avo-website/docs via this repo > Settings > Pages (Custom Domain) which created [a CNAME in docs](docs/CNAME).
 
 ---
 ## License
