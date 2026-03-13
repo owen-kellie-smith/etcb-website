@@ -79,6 +79,15 @@ body{
   color:#fff;
 }
 
+/* VIDEO PLAYER  */
+.video{
+  margin-bottom:40px;
+}
+
+video{
+  width:100%;
+  border-radius:8px;
+}
 
 /* MOBILE MENU BUTTON */
 

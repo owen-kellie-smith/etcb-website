@@ -1,10 +1,11 @@
-const VALID_PAGES = ['latest', 'about',  'membership', 'contact'];
+const VALID_PAGES = ['latest', 'about', 'videos', 'membership', 'contact'];
 
 const PAGE_TITLES = {
   latest:    'ETCB | Latest',
-  about:     'ETCB',
-  membership:   'ETCB - Membership',
-  contact:   'ETCB - Contact',
+  about:     'ETCB | About',
+  videos:     'ETCB | Videos',
+  membership:   'ETCB | Membership',
+  contact:   'ETCB | Contact',
 };
 
 async function loadImports(root = document) {
