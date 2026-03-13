@@ -58,14 +58,14 @@ body{
   display:block;
   padding:12px 18px;
   text-decoration:none;
-  color:#333;
+  color:#145c91;
   font-size:15px;
 }
 
 .site-menu a:hover,
 .site-menu a.active{
-  background:#fff;
-  color:#000;
+  background:#145c91;
+  color:#fff;
 }
 
 /* MOBILE MENU BUTTON */
