@@ -44,7 +44,7 @@ If you are proposing a new page (e.g. `#practices`) in the [current format](#cur
    };
    ```
 
-3. **Add a menu link** in `docs/includes/menu.html`  
+3. **Add a menu link** in `docs/includes/header.html`  
    Copy one of he existing links to add e.g.:
    ```html
    <li><a href="#practices">Practices</a></li>
