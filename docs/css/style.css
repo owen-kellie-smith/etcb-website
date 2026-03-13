@@ -19,7 +19,7 @@ html,body{
 body{
   font-family: Helvetica, Arial, sans-serif;
   color:var(--text);
-  background:#d6d6d6 url("../img/hires_horns.jpg") center top repeat;
+  background:#d6d6d6 url("../img/horns.webp") center top repeat;
   line-height:1.55;
 }
 
