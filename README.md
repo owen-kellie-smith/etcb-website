@@ -50,7 +50,7 @@ If you are proposing a new menu item (e.g. `#practices`) for the [current format
    
 ### Current format
 
-The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#rehearsals`), and the router in `docs/js/import.js` fetches the matching fragment file (`rehearsals.html`) and inserts its content into the page (which hopefully is less flickery than a full page reload).
+The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#contact`), and the router in `docs/js/import.js` fetches the matching fragment file (`contact.html`) and inserts its content into the page (which hopefully is less flickery than a full page reload).
 
 ---
 
