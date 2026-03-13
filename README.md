@@ -16,7 +16,7 @@ The website is in the [docs](docs) folder.
 
 If you are proposing an edit for an existing page then just go ahead and make the edit, commit your change and submit a pull request. 
 
-If you are proposing a new page (e.g. `events`), you need to make **three** changes:
+If you are proposing a new page (e.g. `events`) for the current format, you need to make **three** changes:
 
 1. **Create the content fragment** e.g. copy `docs/contact.html` to `docs/events.html`  
    This file contains only the page content — no `<html>`, `<head>`, or `<body>` tags. Leave the redirect script at the very top so that visiting the file directly sends users to the correct page.  Your new page will look like (once you have finished):
@@ -28,7 +28,7 @@ If you are proposing a new page (e.g. `events`), you need to make **three** chan
    ```
 
 2. **Register the page** in `docs/js/import.js`  
-   Add the new page key to both arrays near the top of the file:
+   Add the new page key to both arrays near the top of `docs/js/import.js`:
    ```js
    const VALID_PAGES = ['latest', 'about', ..., 'rehearsals'];
 
@@ -44,7 +44,7 @@ If you are proposing a new page (e.g. `events`), you need to make **three** chan
    <li><a href="#rehearsals">Rehearsals</a></li>
    ```
 
-> **How it works:** The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#rehearsals`), and the router in `docs/js/import.js` fetches the matching fragment file (`rehearsals.html`) and inserts its content into the page — no full page reload.
+> **How it works:** The site is a single-page application. Only `docs/index.html` is ever loaded by the browser. Clicking a menu link changes the URL hash (e.g. `#rehearsals`), and the router in `docs/js/import.js` fetches the matching fragment file (`rehearsals.html`) and inserts its content into the page (which hopefully is less flickery than a full page reload).
 
 ---
 
