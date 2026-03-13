@@ -1,10 +1,8 @@
-const VALID_PAGES = ['latest', 'about', 'conductor', 'leader', 'membership', 'contact'];
+const VALID_PAGES = ['latest', 'about',  'membership', 'contact'];
 
 const PAGE_TITLES = {
   latest:    'ETCB | Latest',
   about:     'ETCB',
-  conductor: 'ETCB - Conductor',
-  leader:    'ETCB - Leader',
   membership:   'ETCB - Membership',
   contact:   'ETCB - Contact',
 };
