@@ -1,7 +1,7 @@
 # etcb-website
 ![site checks](https://github.com/owen-kellie-smith/etcb-website/actions/workflows/site-checks.yml/badge.svg)
 
-**Live site:** 
+**Live site:** https://owen-kellie-smith.github.io/etcb-website/
 
 ---
 
