@@ -304,7 +304,7 @@ a{
 @media (max-width:560px){
 
   .site-title{
-    font-size:24px;
+    font-size:5vw;
   }
 
   /* hamburger button pinned to top-right of the header-shell */
