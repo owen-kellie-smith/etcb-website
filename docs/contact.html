@@ -10,6 +10,8 @@
 
 <div class="content-figure slideshow">
   <img src="img/hires_horns.jpg.webp" class="slide active" loading="eager">
+  <img src="img/tuba1.jpg" class="slide" loading="lazy">
+  <img src="img/tuba2.jpg" class="slide" loading="lazy">
 </div>
 
 
@@ -28,7 +30,7 @@
         slides[index].classList.remove('active');
         index = (index + 1) % slides.length;
         slides[index].classList.add('active');
-      }, 4000);
+      }, 6000); // slow change for only 3 images
     }
 
     function stop() {
