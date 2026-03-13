@@ -43,7 +43,7 @@ body{
   background: linear-gradient(#f9f9f9,#ececec);
   border-bottom: 1px solid var(--menu-border);
   position: relative;
-  z-index 2000;
+  z-index: 2000;
 }
 
 .site-menu{
@@ -306,7 +306,7 @@ a{
   .content{
     padding:22px 20px 28px;
   }
-
+}
 
 /* MOBILE */
 
