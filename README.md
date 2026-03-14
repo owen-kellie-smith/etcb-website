@@ -2,6 +2,7 @@
 ![site checks](https://github.com/owen-kellie-smith/etcb-website/actions/workflows/site-checks.yml/badge.svg)
 
 **Live site:**  https://www.etcb.co.uk/     [How?](#domain-name-management-info)
+
 **Alias Live site:**  https://www.exmouthtownband.co.uk/     [How?](#domain-name-redirect)
 
 ---
@@ -97,9 +98,9 @@ flowchart TB
 
 A[User Browser]
 
-B[exmouthtownband.co.uk<br>Domain registered at Fasthosts]
+B[etcb.co.uk<br>Domain registered at 123reg]
 
-C[Fasthosts DNS<br>Nameservers → Cloudflare]
+C[123reg DNS<br>Nameservers → Cloudflare]
 
 D[Cloudflare DNS<br>CNAME www → owen-kellie-smith.github.io]
 
@@ -116,7 +117,9 @@ E --> F
 
 
 ## Domain name redirect
+
 As a demo, [exmouthtownband.co.uk is registered (at fasthosts), for a year until March 2027. Fasthosts DNS settings forward to Cloudflare.](https://www.whois.com/whois/exmouthtownband.co.uk) Cloudflare [redirects exmouthtownband.co.uk to etcb.co.uk](https://redirectcheck.io/check?url=http://exmouthtownband.co.uk).
+
 ---
 ## License
 
