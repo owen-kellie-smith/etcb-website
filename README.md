@@ -1,7 +1,8 @@
 # etcb-website
 ![site checks](https://github.com/owen-kellie-smith/etcb-website/actions/workflows/site-checks.yml/badge.svg)
 
-**Live site:**  https://www.exmouthtownband.co.uk/     [How?](#domain-name-management-info)
+**Live site:**  https://www.etcb.co.uk/     [How?](#domain-name-management-info)
+**Alias Live site:**  https://www.exmouthtownband.co.uk/     [How?](#domain-name-redirect)
 
 ---
 
@@ -89,7 +90,7 @@ then open `http://localhost:4173`
 
 ---
 ## Domain name management (info)
-As a demo, [exmouthtownband.co.uk is registered (at fasthosts), for a year until March 2027. Fasthosts DNS settings forward to Cloudflare.](https://www.whois.com/whois/exmouthtownband.co.uk) Cloudflare [has a CNAME for www(.exmouthtownband.co.uk) which is owen-kellie-smith.github.io](https://mxtoolbox.com/SuperTool.aspx?action=mx%3awww.exmouthtownband.co.uk&run=toolpage).  Github fowards to etcb-website/docs via this repo > Settings > Pages (Custom Domain) which created [a CNAME in docs](docs/CNAME).
+As a demo, [etcb.co.uk is registered (at 123reg.co.uk), for a year until March 2027. 123reg DNS settings forward to Cloudflare.](https://www.whois.com/whois/etcb.co.uk) Cloudflare [has a CNAME for www(.etcb.co.uk) which is owen-kellie-smith.github.io](https://mxtoolbox.com/SuperTool.aspx?action=mx%3awww.etcb.co.uk&run=toolpage).  Github fowards to etcb-website/docs via this repo > Settings > Pages (Custom Domain) which created [a CNAME in docs](docs/CNAME).
 
 ```mermaid
 flowchart TB
@@ -113,6 +114,9 @@ D --> E
 E --> F
 ```
 
+
+## Domain name redirect
+As a demo, [exmouthtownband.co.uk is registered (at fasthosts), for a year until March 2027. Fasthosts DNS settings forward to Cloudflare.](https://www.whois.com/whois/exmouthtownband.co.uk) Cloudflare [redirects exmouthtownband.co.uk to etcb.co.uk](https://redirectcheck.io/check?url=http://exmouthtownband.co.uk).
 ---
 ## License
 
