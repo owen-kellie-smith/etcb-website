@@ -89,8 +89,27 @@ then open `http://localhost:4173`
 
 ---
 ## Domain name management (info)
-As a demo, [exmouthtownband.co.uk is registered (at fasthosts), for a year until March 2027. Fasthosts DNS settings forward to Cloudflare.](https://www.whois.com/whois/exmouthtownband.co.uk) Cloudflare [has a CNAME for www(.exmouthtownband.co.uk) which is owen-kellie-smith.github.io](https://mxtoolbox.com/SuperTool.aspx?action=mx%3awww.exmouthtownband.co.uk&run=toolpage).  Github fowards to avo-website/docs via this repo > Settings > Pages (Custom Domain) which created [a CNAME in docs](docs/CNAME).
+As a demo, [exmouthtownband.co.uk is registered (at fasthosts), for a year until March 2027. Fasthosts DNS settings forward to Cloudflare.](https://www.whois.com/whois/exmouthtownband.co.uk) Cloudflare [has a CNAME for www(.exmouthtownband.co.uk) which is owen-kellie-smith.github.io](https://mxtoolbox.com/SuperTool.aspx?action=mx%3awww.exmouthtownband.co.uk&run=toolpage).  Github fowards to etcb-website/docs via this repo > Settings > Pages (Custom Domain) which created [a CNAME in docs](docs/CNAME).
 
+flowchart TB
+
+A[User Browser]
+
+B[exmouthtownband.co.uk<br>Domain registered at Fasthosts]
+
+C[Fasthosts DNS<br>Nameservers → Cloudflare]
+
+D[Cloudflare DNS<br>CNAME www → owen-kellie-smith.github.io]
+
+E[GitHub Pages<br>Custom domain configured]
+
+F[Repo: etcb-website<br>/docs directory<br>Static site]
+
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
 ---
 ## License
 
