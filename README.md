@@ -94,7 +94,7 @@ https://www.opengraph.xyz/url/https%3A%2F%2Fwww.exmouthtownconcertband.co.uk
 
 ---
 ## Domain name management (info)
-[exmouthtownconcertband.co.uk is registered (at 123reg.co.uk). 123reg DNS settings forward to Cloudflare.](https://www.whois.com/whois/exmouthtownconcertband.co.uk) Cloudflare [has a CNAME for www(.exmouthtownconcertband.co.uk) which is owen-kellie-smith.github.io](https://mxtoolbox.com/SuperTool.aspx?action=mx%3awww.exmouthtownconcertband.co.uk&run=toolpage).  Github fowards to etcb-website/docs via this repo > Settings > Pages (Custom Domain) which created [a CNAME in docs](docs/CNAME).
+[exmouthtownconcertband.co.uk is registered (at 123reg.co.uk). 123reg DNS settings forward to Cloudflare.](https://www.whois.com/whois/exmouthtownconcertband.co.uk) Cloudflare [has a CNAME for www(.exmouthtownconcertband.co.uk) which is owen-kellie-smith.github.io](https://mxtoolbox.com/SuperTool.aspx?action=cname%3awww.exmouthtownconcertband.co.uk&run=toolpage).  Github fowards to etcb-website/docs via this repo > Settings > Pages (Custom Domain) which created [a CNAME in docs](docs/CNAME).
 
 ```mermaid
 flowchart TB
