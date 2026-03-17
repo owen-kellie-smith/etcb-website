@@ -87,7 +87,10 @@ python3 -m http.server 4173
 ```
 then open `http://localhost:4173`
 
+---
+## To see how page summary will look e.g. in whatsapp (info)
 
+https://www.opengraph.xyz/url/https%3A%2F%2Fwww.exmouthtownconcertband.co.uk
 
 ---
 ## Domain name management (info)
