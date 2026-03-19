@@ -5,7 +5,8 @@
 
 **Alias Live site:**  https://www.exmouthtownband.co.uk/     [How?](#domain-name-redirect)
 
-**Similar repos** [../static-websites](../static-websites)
+**Similar repos** [../../static-websites](../../static-websites)
+
 ---
 
 ## How to contribute
