@@ -5,7 +5,7 @@
 
 **Alias Live site:**  https://www.exmouthtownband.co.uk/     [How?](#domain-name-redirect)
 
-**Similar repos** [../../../static-websites](../../../static-websites)
+**Similar repos** https://owen-kellie-smith.github.io/static-websites
 
 ---
 
