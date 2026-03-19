@@ -118,11 +118,31 @@ D --> E
 E --> F
 ```
 
+### Cloudflare settings
+
+#### DNS Records
+CNAME exmouthtownconcertband.co.uk	--> owen-kellie-smith.github.io Proxied
+CNAME www.exmouthtownconcertband.co.uk -->	exmouthtownconcertband.co.uk Proxied
++ DNS records for mail forwarding
+
+#### SSL / TSL
+Overview: Current encryption mode: Full
+Edge Certificates: Always use HTTPS --> ON
+
 
 ## Domain name redirect
 
 As a demo, [exmouthtownband.co.uk is registered (at fasthosts), for a year until March 2027. Fasthosts DNS settings forward to Cloudflare.](https://www.whois.com/whois/exmouthtownband.co.uk) Cloudflare [redirects exmouthtownband.co.uk to exmouthtownconcertband.co.uk](https://redirectcheck.io/check?url=http://exmouthtownband.co.uk).
 
+### Cloudflare settings
+#### DNS Records
+A exmouthtownband.co.uk --> 192.0.2.1 Proxied
+CNAME www --> exmouthtownband.co.uk Proxied
+
+####Rules - Page Rules: 
+- redirect www.exmouthtownband.co.uk/* Forwarding URL Status Code: 301 - Permanent Redirect, Url: https://exmouthtownconcertband.co.uk/
+- redirect exmouthtownband.co.uk/* Forwarding URL  Status Code: 301 - Permanent Redirect, Url: https://exmouthtownconcertband.co.uk
+  
 ---
 ## License
 
